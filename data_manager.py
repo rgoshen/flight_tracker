@@ -17,7 +17,6 @@ class DataManager:
 
 #TODO: POST(add rows) sheet:prices data
 
-#TODO: PUT(update rows) sheet:prices data
     def update_destination_codes(self):
         """Method for updating the iata code on price sheet."""
         for city in self.destination_data:
