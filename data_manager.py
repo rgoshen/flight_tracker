@@ -9,13 +9,27 @@ class DataManager:
         self.destination_data = {}
 
     def get_destination_data(self):
+        """Method for getting spreadsheet data from prices sheet."""
         response = requests.get(url=SHEETY_PRICES_ENDPOINT)
-        destination_data = response.json()['prices']
-        # pprint(destination_data)
-        return destination_data
+        self.destination_data = response.json()['prices']
+        # pprint(self.destination_data)
+        return self.destination_data
 
 #TODO: POST(add rows) sheet:prices data
 
 #TODO: PUT(update rows) sheet:prices data
+    def update_destination_codes(self):
+        """Method for updating the iata code on price sheet."""
+        for city in self.destination_data:
+            new_data = {
+                "price":{
+                    "iataCode": city["iataCode"]
+                }
+            }
+            response = requests.put(
+                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}", 
+                json=new_data
+            )
+        print(response)            
 
 #TODO: DELETE sheet:prices data
