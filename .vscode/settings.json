@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "SHEETY"
-    ]
+    ],
+    "python.pythonPath": "venv\\Scripts\\python.exe"
 }
