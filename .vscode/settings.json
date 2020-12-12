@@ -5,7 +5,11 @@
         "SHEETY",
         "TEQULIA",
         "Uabbien",
+        "addrs",
         "curr",
+        "gmail",
+        "pflyers",
+        "smtplib",
         "twilio"
     ],
     "python.pythonPath": "venv\\Scripts\\python.exe"
