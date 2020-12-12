@@ -13,9 +13,9 @@ class DataManager:
         response = requests.get(url=SHEETY_PRICES_ENDPOINT)
         self.destination_data = response.json()['prices']
         # pprint(self.destination_data)
+        # print(response)
         return self.destination_data
 
-#TODO: POST(add rows) sheet:prices data
 
     def update_destination_codes(self):
         """Method for updating the iata code on price sheet."""
@@ -26,9 +26,12 @@ class DataManager:
                 }
             }
             response = requests.put(
-                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}", 
+                url=f"{SHEETY_PRICES_ENDPOINT}/{city['id']}",
                 json=new_data
             )
-        print(response)            
+        # print(response)
+
+
+#TODO: POST(add rows) sheet:prices data
 
 #TODO: DELETE sheet:prices data
